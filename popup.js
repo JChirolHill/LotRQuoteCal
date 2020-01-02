@@ -25,11 +25,9 @@ request.onload = function() {
   if (this.status >= 200 && this.status < 400) {
     // Success!
     var data = JSON.parse(this.response);
-    // console.log(data);
 
     // check if any matching dates
     let today = new Date();
-    // let today = new Date("2019-03-14");
     dateHTML.innerHTML = today.toDateString();
     let date = (today.getMonth() + 1).toString() + "/" + today.getDate();
     if(data[date]) { // there is an event today

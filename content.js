@@ -29,7 +29,7 @@ chrome.storage.sync.get('showAllQuotes', function(results) {
               let appendTo = document.getElementById('sfcnt');
               quoteDiv.style.textAlign = 'left';
               quoteDiv.style.width = '80%';
-              quoteDiv.style.margin = '0 auto 20px auto';
+              quoteDiv.style.margin = '-10px auto 25px auto';
               appendTo.append(quoteDiv);
               let below = document.getElementById('hdtb-msb');
               below.style.margin = '-15px';

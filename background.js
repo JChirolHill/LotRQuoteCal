@@ -42,27 +42,13 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.runtime.onStartup.addListener(function() {
   chrome.storage.sync.get('lastSetDateLOTR', function(result) {
-    console.log('in storage: ' + result.lastSetDateLOTR);
     let today = new Date();
-    console.log('today: ' + today.toString());
     if(typeof result.lastSetDateLOTR === 'undefined'
       || !sameDay(today, new Date(result.lastSetDateLOTR))) {
       chrome.storage.sync.set({lastSetDateLOTR: today.toString()}, function() {
-        console.log('set to today date');
         // pick a quote for today
         pickNewQuote();
       });
     }
-    else {
-      console.log('did not set date');
-    }
   });
-  // chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-  //   chrome.declarativeContent.onPageChanged.addRules([{
-  //     conditions: [new chrome.declarativeContent.PageStateMatcher({
-  //       pageUrl: {hostEquals: ''},
-  //     })],
-  //       actions: [new chrome.declarativeContent.ShowPageAction()]
-  //   }]);
-  // });
 });
