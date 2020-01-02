@@ -1,0 +1,31 @@
+{
+  "name": "Lord of the Rings Calendar",
+  "version": "1.0",
+  "description": "What happened today in Middle Earth?",
+  "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "*://*.google.com/*", "*://*.duckduckgo.com/*"],
+  "content_scripts": [{
+    "matches": ["*://*.google.com/*", "*://*.duckduckgo.com/*"],
+    "js": ["content.js"]
+  }],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/one_ring16.png",
+      "32": "images/one_ring32.png",
+      "48": "images/one_ring48.png",
+      "128": "images/one_ring128.png"
+    }
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "images/one_ring16.png",
+    "32": "images/one_ring32.png",
+    "48": "images/one_ring48.png",
+    "128": "images/one_ring128.png"
+  },
+  "manifest_version": 2
+}
