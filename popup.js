@@ -1,3 +1,6 @@
+// remove the badge on browseraction
+chrome.browserAction.setBadgeText({text: ''});
+
 let dateHTML = document.getElementById('date');
 let eventsHTML = document.getElementById('events');
 let quoteHTML = document.getElementById('quoteOfDay');
@@ -19,41 +22,28 @@ chrome.storage.sync.get('LOTRQuote', function(results) {
 });
 
 // get dates and display events
-var request = new XMLHttpRequest();
-request.open('GET', 'lib/dates.json', true);
-request.onload = function() {
-  if (this.status >= 200 && this.status < 400) {
-    // Success!
-    var data = JSON.parse(this.response);
-
-    // check if any matching dates
-    let today = new Date();
-    dateHTML.innerHTML = today.toDateString();
-    let date = (today.getMonth() + 1).toString() + "/" + today.getDate();
-    if(data[date]) { // there is an event today
-      for(var year in data[date]) {
-        let div = document.createElement('div');
-        let yearHTML = document.createElement('div');
-        yearHTML.setAttribute('class', 'year');
-        yearHTML.innerHTML = 'Year ' + year;
-        div.appendChild(yearHTML);
-        let eventHTML = document.createElement('div');
-        eventHTML.innerHTML = data[date][year];
-        div.appendChild(eventHTML);
-        eventsHTML.appendChild(div);
-      };
-    }
-    else { // no events today
-      let emptyDiv = document.createElement('div');
-      emptyDiv.innerHTML = 'There are no events in Middle Earth today.';
-      emptyDiv.setAttribute('style', 'color: var(--secondary);');
-      eventsHTML.appendChild(emptyDiv);
-    }
-  } else {
-    // We reached our target server, but it returned an error
+fetch('lib/dates.json').then(r => r.json()).then(data => {
+  // check if any matching dates
+  let today = new Date();
+  dateHTML.innerHTML = today.toDateString();
+  let date = (today.getMonth() + 1).toString() + "/" + today.getDate();
+  if(data[date]) { // there is an event today
+    for(var year in data[date]) {
+      let div = document.createElement('div');
+      let yearHTML = document.createElement('div');
+      yearHTML.setAttribute('class', 'year');
+      yearHTML.innerHTML = 'Year ' + year;
+      div.appendChild(yearHTML);
+      let eventHTML = document.createElement('div');
+      eventHTML.innerHTML = data[date][year];
+      div.appendChild(eventHTML);
+      eventsHTML.appendChild(div);
+    };
   }
-};
-request.onerror = function() {
-  // There was a connection error of some sort
-};
-request.send();
+  else { // no events today
+    let emptyDiv = document.createElement('div');
+    emptyDiv.innerHTML = 'There are no events in Middle Earth today.';
+    emptyDiv.setAttribute('style', 'color: var(--secondary);');
+    eventsHTML.appendChild(emptyDiv);
+  }
+});
