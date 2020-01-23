@@ -2,9 +2,11 @@
 
 What happened today in Middle Earth? Find out with an accompanied quote of the day from the Lord of the Rings trilogy by J.R.R. Tolkien.  
 
-[What Happened Today in Middle Earth](calendar)
-[Quote of the Day](quote)
-[Options](options)
+[What Happened Today in Middle Earth](#calendar)
+
+[Quote of the Day](#quote)
+
+[Options](#options)
 
 ## <a name="calendar">What Happened Today in Middle Earth?</a>
 
