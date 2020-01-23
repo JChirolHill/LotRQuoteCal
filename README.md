@@ -2,7 +2,11 @@
 
 What happened today in Middle Earth? Find out with an accompanied quote of the day from the Lord of the Rings trilogy by J.R.R. Tolkien.  
 
-## What Happened Today in Middle Earth?
+[What Happened Today in Middle Earth](calendar)
+[Quote of the Day](quote)
+[Options](options)
+
+## <a name="calendar">What Happened Today in Middle Earth?</a>
 
 By clicking on the extension icon, you can see all events that happened today
 in Middle Earth, according to the appendices.
@@ -17,7 +21,7 @@ No worries if there isn't an event today, we'll tell you the date of the next ev
 
 ![Demo Popup No Event](images/demo_popup_noevent.png)
 
-## Quote of the Day
+## <a name="quote">Quote of the Day</a>
 
 Receive a quote of the day to accompany your daily online searches (support
 for search engines Google and DuckDuckGo).
@@ -27,7 +31,7 @@ Google | DuckDuckGo
 ![Demo Google Homepage](images/demo_googlehome.png) | ![Demo DuckDuckGo Homepage](images/demo_duckhome.png)
 ![Demo Google Results Page](images/demo_googleresults.png) | ![Demo DuckDuckGo Results Page](images/demo_duckresults.png)
 
-## Options
+## <a name="options">Options</a>
 
 Decide where or if you want to see the quote of the day through the intuitive
 options menu accessible by viewing the details of the extension in your
