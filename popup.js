@@ -41,8 +41,15 @@ fetch('lib/dates.json').then(r => r.json()).then(data => {
     };
   }
   else { // no events today
+    // find next event
+    let daysFromToday = 1;
+    do {
+      today.setDate(today.getDate() + daysFromToday);
+      date = (today.getMonth() + 1).toString() + "/" + today.getDate();
+    } while(!data[date]);
+
     let emptyDiv = document.createElement('div');
-    emptyDiv.innerHTML = 'There are no events in Middle Earth today.';
+    emptyDiv.innerHTML = 'There are no events in Middle Earth today.<br/>Check back on <span style="font-size: 20px;">' + date + '</span>!';
     emptyDiv.setAttribute('style', 'color: var(--secondary);');
     eventsHTML.appendChild(emptyDiv);
   }

@@ -9,6 +9,14 @@ in Middle Earth, according to the appendices.
 
 ![Demo Popup Menu](images/demo_popup.png)
 
+Never miss an event!  A green badge shows up whenever there is an event on that day.
+
+![Demo Popup Badge](images/demo_popup_badge.png)
+
+No worries if there isn't an event today, we'll tell you the date of the next event so you don't miss out.
+
+![Demo Popup No Event](images/demo_popup_noevent.png)
+
 ## Quote of the Day
 
 Receive a quote of the day to accompany your daily online searches (support
